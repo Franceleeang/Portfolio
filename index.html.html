@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      transition: 0.3s;
+      padding: 20px;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .greeting {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .project-card {
+      background: #f3f3f3;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .dark-mode .project-card {
+      background: #1f1f1f;
+      border-color: #444;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #show-more-btn, #dark-toggle, #submit-btn {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+      background-color: #1e3c72;
+      color: white;
+      border-radius: 4px;
+    }
+
+    #show-more-btn:hover, #dark-toggle:hover, #submit-btn:hover {
+      background-color: #365fa0;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="dark-toggle">🌙 Dark Mode</button>
+  <div class="greeting" id="greeting"></div>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>France Lee M. Ang</h1>
+        <p>Student | Lover Boy | Cyclists</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! Im France lee, An IT Student of Romblon Sawang University.
+        </section>
+
+        <html>
+<head>
+<leftside>
+<title><b><i>Frequently Asked Questions</title></i>
+<style>
+body {
+  font-family: serif;
+  line-height: 1.6;
+  color: aliceblue;
+  background-color:rgb(62, 151, 96);
+
+}
+
+.faq {
+  width: 50%;
+}
+
+.question {
+  background-color:rgb(11, 11, 12);
+  color:whitesmoke;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.answer {
+  background-color:rgb(0, 0, 0);
+  color:rgb(243, 241, 241);
+  padding: 10px;
+  margin-bottom: 10px;
+  display: none; /* Initially hidden */
+}
+
+.question.active + .answer {
+  display: block; /* Show answer when question is clicked */
+}
+</style>
+</head>
+<body>
+
+<div class="faq">
+ <b><i><h1>Projects</h1></i>
+
+  <div class="question"> Memory Matching Game</div>
+  <div class="answer">
+    -A card-flipping game where players try to match pairs by remembering card positions.
+  </div>
+
+  <div class="question">Click the Target</div>
+  <div class="answer">
+    -A reaction time game where targets appear randomly and the user must click them as quickly as possible.
+  </div>
+
+  <div class="question">Quiz Game</div>
+  <div class="answer">
+    -A game where players answer multiple-choice questions and get points based on correct answers.
+  </div>
+</div>
+
+<script>
+const questions = document.querySelectorAll('.question');
+questions.forEach(question => {
+  question.addEventListener('click', () => {
+    question.classList.toggle('active');
+  });
+});
+</script>
+
+        <!-- Personal Skills Section -->
+<section class="personal-skills section" id="personal-skills">
+  <h2>Personal Skills</h2>
+  <ul class="skills-list">
+      <li>Focus</li>
+      <li>Problem Solving</li>
+      <li>Time Management</li>
+      <li>Team Collaboration</li>
+      <li>Adaptability</li>
+      <li>Self-Motivation</li>
+  </ul>
+</section>
+
+
+        <section id="contact">
+            <h2>Contact Me!</h2>
+            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on social media!</p>
+            <p>Email: <a href="mailto:your-email@example.com">franceleemalabrigaang@gmail.com</a></p>
+            <p>Contact No. <a href="mailto:your-email@example.com">09055076954</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 France. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+  <script>
+    // 1. DARK MODE TOGGLE
+    const toggle = document.getElementById('dark-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
+    // 2. SHOW MORE PROJECTS
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const hiddenProjects = document.querySelectorAll('.project-card.hidden');
+    showMoreBtn.addEventListener('click', () => {
+      hiddenProjects.forEach(card => card.classList.remove('hidden'));
+      showMoreBtn.style.display = 'none';
+    });
+
+    // 3. DYNAMIC GREETING
+    const greeting = document.getElementById('greeting');
+    const hour = new Date().getHours();
+    let greetingText = 'Hello!';
+    if (hour < 12) greetingText = 'Good Morning ☀️';
+    else if (hour < 18) greetingText = 'Good Afternoon 🌤️';
+    else greetingText = 'Good Evening 🌙';
+    greeting.textContent = greetingText;
+
+    // 4. FORM VALIDATION
+    const form = document.getElementById('contact-form');
+    const errorMsg = document.getElementById('error-msg');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        errorMsg.textContent = 'Please fill out all fields.';
+      } else {
+        errorMsg.textContent = '';
+        alert('Message sent! Thank you, ' + name + '.');
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
